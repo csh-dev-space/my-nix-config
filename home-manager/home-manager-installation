@@ -1,0 +1,34 @@
+# To check the channels
+nix-channel --list
+
+# add nix channel 
+# and name it as home-manager
+# nix-channel --add
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
+
+# update nix channel
+nix-channel --update
+
+# Run the Home Manager installation command
+nix-shell '<home-manager>' -A install
+
+# Tackle error
+error: file 'home-manager' was not found in the Nix search path (add it using $NIX_PATH or -I)
+if you encounter the following error
+then log out and log back in 
+or 
+reboot 
+
+# Configuration
+configuration file can be found in the path:
+/home/usr/.config/home-manager/home.nix
+
+# Add Packages
+add required pkgs to the home.nix file
+and run the following command to install them
+home-manager switch
+
+# Commands
+home-manager switch 
+home-manager generations
+home-manager packages
